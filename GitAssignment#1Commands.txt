@@ -1,0 +1,82 @@
+$ mkdir localrepo
+
+$ cd localrepo
+
+$ git init
+Initialized empty Git repository in C:/localrepo/.git/
+
+$ git status
+On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+
+$ touch Code.txt
+
+$ touch Log.txt
+
+$ touch Output.txt
+
+$ ls
+Code.txt  Log.txt  Output.txt
+
+$ git add Code.txt
+
+$ git add Output.txt
+
+$ git status
+On branch master
+No commits yet
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Code.txt
+        new file:   Output.txt
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Log.txt
+
+$ git commit -m "Code.txt and Output.txt files commit done"
+[master (root-commit) cc0e9ec] Code.txt and Output.txt files commit done
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Code.txt
+ create mode 100644 Output.txt
+
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Log.txt
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git remote add origin
+usage: git remote add [<options>] <name> <url>
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+$ git remote add origin https://github.com/devendraparihar/GitAssignment1.git
+
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 241 bytes | 120.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/devendraparihar/GitAssignment1/pull/new/master
+remote:
+To https://github.com/devendraparihar/GitAssignment1.git
+ * [new branch]      master -> master
+
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Log.txt
+nothing added to commit but untracked files present (use "git add" to track)
